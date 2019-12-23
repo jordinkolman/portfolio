@@ -42,7 +42,8 @@ def email_to_recipient(data):
     email['to'] = 'jordinkolman@gmail.com'
     email['from'] = data['email']
     email['subject'] = data['subject']
-    email.set_content(data['message'])
+    email.set_content(data['message'] +
+                      '\n\n this message is from ' + data['email'])
 
     with smtplib.SMTP(host='smtp.gmail.com', port=587) as smtp:
         smtp.ehlo()
