@@ -21,7 +21,7 @@
     />
     <link href="../static/assets/favicon.ico" rel="icon" />
 
-    <title>Project</title>
+    <title>Password Checker</title>
 
     <link href="../static/main.3f6952e4.css" rel="stylesheet" />
   </head>
@@ -75,55 +75,38 @@
         <div class="row">
           <div class="col-xs-12">
             <img
-              src="../static/assets/images/work001-01.jpg"
+              src="../static/assets/images/password.jpg"
               class="img-responsive"
               alt=""
             />
             <div class="card-container">
               <div class="text-center">
-                <h1 class="h2">001 : Fringilla sit amet</h1>
+                <h1 class="h2">001 : Python Password Checker</h1>
               </div>
               <p>
-                Nulla facilisi. Vivamus vestibulum, elit in scelerisque
-                ultricies, nisl nunc pulvinar ligula, id sodales arcu sapien in
-                nisi. Quisque libero enim, mattis non augue posuere, venenatis
-                dapibus urna.
+                This program uses an API to check of a given password has ever been compromised in a data breach, 
+                and returns how many times the password has been compromised.
               </p>
 
               <blockquote>
                 <p>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer posuere erat a ante."
-                </p>
-                <small class="pull-right">Irina Martin</small>
-              </blockquote>
-            </div>
-          </div>
+                  This program works off of the pwnedpassword API. It works by converting the input password into utf-8.
+                  It then only sends the first 5 digits of the encoded password to the API. This is done to avoid having to 
+                  send passwords over network connections, keeping it secure and on the local machine. The API returns a list
+                  of compromised passwords that match those 5 digits. The program then looks over the list, and if it finds a match
+                  to the encoded password, it returns how many times it appears on the list (and was therefore compromised).
 
-          <div class="col-md-8 col-md-offset-2 section-container-spacer">
-            <div class="row">
-              <div class="col-xs-12 col-md-6">
-                <img
-                  src="../static/assets/images/work001-02.jpg"
-                  class="img-responsive"
-                  alt=""
-                />
-                <p>Menphis skyline</p>
-              </div>
-              <div class="col-xs-12 col-md-6">
-                <img
-                  src="../static/assets/images/work001-03.jpg"
-                  class="img-responsive"
-                  alt=""
-                />
-                <p>Menphis skyline</p>
-              </div>
+                  <br><br>
+
+                  <a href="https://github.com/jordinkolman/passwordchecker" class="btn btn-default">See it on GitHub</a>
+                </p>
+              </blockquote>
             </div>
           </div>
 
           <div class="col-xs-12">
             <img
-              src="../static/assets/images/work001-04.jpg"
+              src="../static/assets/images/PasswordCheckerScreenshot.JPG"
               class="img-responsive"
               alt=""
             />
