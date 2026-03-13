@@ -20,9 +20,14 @@
             <img src="{{ url_for('static', filename='assets/legacy-kernel-logo.png') }}" alt="Legacy Kernel Logo" class="logo-img" onerror="this.style.display='none'">
             <div style="display: flex; flex-direction: column;">
                 <h1 class="site-title" style="line-height: 1;">Jordin Kolman</h1>
-                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-color); opacity: 0.8;">LEGACY_KERNEL</span>
+                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-color); opacity: 0.8;">@LEGACYKERNEL</span>
             </div>
         </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
         <nav class="nav-links">
             <a href="{{ url_for('home') }}">Home</a>
             <a href="{{ url_for('projects') }}">Projects</a>
@@ -38,5 +43,19 @@
     <footer>
         <p>&copy; 2026 Legacy Kernel | Built with structured intent.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    menuToggle.classList.toggle('active'); // Optional: for animating the hamburger icon itself
+                });
+            }
+        });
+    </script>
 </body>
 </html>
