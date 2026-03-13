@@ -1,0 +1,9 @@
+[
+  {
+    "id": "intellibills",
+    "name": "Intellibills",
+    "description": "A gig-worker and independent contractor focused AI-powered financial management platform.",
+    "tech": ["Java", "Spring Boot", "PostgreSQL", "Next.js", "Python", "LangGraph"],
+    "link": "https://github.com/jordinkolman/intellibills"
+  }
+]

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Blog | Legacy Kernel{% endblock %}
+
+{% block content %}
+<h2 style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 2rem;">The Legacy Kernel Blog</h2>
+<p style="margin-bottom: 2rem; opacity: 0.9;">Essays investigating the shared architectural principles between historical medieval structures (like feudalism and castles) and modern distributed systems, threat modeling, and application theory.</p>
+
+<ul class="grid-list">
+    {% for post in posts %}
+        <li class="card">
+            <h3 class="card-title"><a href="{{ url_for('post', slug=post.slug) }}">{{ post.title }}</a></h3>
+            <div class="card-meta">{{ post.date }}</div>
+            <p>{{ post.summary }}</p>
+            <a href="{{ url_for('post', slug=post.slug) }}" style="display: inline-block; margin-top: 1rem; font-weight: bold;">Read standard output →</a>
+        </li>
+    {% else %}
+        <li><p>No essays published currently.</p></li>
+    {% endfor %}
+</ul>
+{% endblock %}

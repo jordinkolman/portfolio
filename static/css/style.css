@@ -1,0 +1,348 @@
+:root {
+    --bg-color: #0d0d0d;
+    --text-color: #e0e0e0;
+    --accent-color: #d4af37; /* Legacy Kernel Gold */
+    --accent-hover: #f1c453;
+    --card-bg: #1a1a1a;
+    --border-color: #333333;
+    
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-serif: 'Merriweather', "Times New Roman", Times, serif;
+    --font-mono: 'Fira Code', 'Courier New', Courier, monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =========================================
+   Typography
+   ========================================= */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+p {
+    margin-bottom: 1.25rem;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+/* =========================================
+   Layout & Components
+   ========================================= */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(13, 13, 13, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 45px;
+    height: auto;
+    border-radius: 4px; /* Slight rounding for the square logo */
+}
+
+.site-title {
+    font-family: var(--font-mono); /* Technical vibe for the main brand */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--accent-hover);
+}
+
+/* =========================================
+   Cards & Lists (Projects, Blog Posts)
+   ========================================= */
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
+}
+
+.card-title {
+    margin-bottom: 0.5rem;
+}
+
+.card-meta {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    background: #333;
+    color: #ccc;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+/* =========================================
+   Buttons & Inputs
+   ========================================= */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+    color: var(--bg-color);
+    transform: scale(1.02);
+}
+
+/* =========================================
+   Markdown Content Styling (Blog Posts/Resume)
+   ========================================= */
+.markdown-content {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 1.1rem;
+}
+
+.markdown-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.markdown-content h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.markdown-content p {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.markdown-content ul, .markdown-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    opacity: 0.9;
+}
+
+.markdown-content li {
+    margin-bottom: 0.5rem;
+}
+
+.markdown-content blockquote {
+    border-left: 4px solid var(--accent-color);
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background: rgba(212, 175, 55, 0.05);
+    font-style: italic;
+}
+
+.markdown-content pre {
+    background: #111;
+    padding: 1.5rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.markdown-content code {
+    font-family: var(--font-mono);
+    color: var(--accent-hover);
+}
+
+.markdown-content pre code {
+    color: #e0e0e0;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 2rem;
+}
+
+/* =========================================
+   Micro Animation utilities
+   ========================================= */
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .markdown-content {
+        padding: 1.5rem;
+    }
+    .grid-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   Resume Specific Overrides (Mammoth Parser)
+   ========================================= */
+.resume-container {
+    font-size: 0.95rem; /* Scale down overall font */
+}
+
+.resume-container h1, 
+.resume-container h2, 
+.resume-container h3, 
+.resume-container h4 {
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.resume-container h1 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.resume-container h2 {
+    font-size: 1.25rem;
+}
+
+.resume-container h3 {
+    font-size: 1.1rem;
+}
+
+.resume-container h4,
+.resume-container h5,
+.resume-container h6 {
+    font-size: 1rem;
+}
+
+.resume-container p {
+    margin-bottom: 0.5rem;
+}
+
+.resume-container ul {
+    margin-bottom: 0.75rem;
+}
+

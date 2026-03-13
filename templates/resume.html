@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Resume | Legacy Kernel{% endblock %}
+
+{% block content %}
+<div style="display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 2rem;">
+    <h2 style="margin: 0;">Resume</h2>
+    <a href="{{ url_for('static', filename='assets/SWEResume2026.docx') }}" class="btn" download>Download .DOCX</a>
+</div>
+
+<div class="markdown-content resume-container">
+    {{ resume_content | safe }}
+</div>
+{% endblock %}

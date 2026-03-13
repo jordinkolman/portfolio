@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }} | Legacy Kernel{% endblock %}
+
+{% block content %}
+<a href="{{ url_for('blog') }}" style="display: inline-block; margin-bottom: 2rem; opacity: 0.8;">← Back to Blog</a>
+
+<article class="markdown-content">
+    {{ post.content | safe }}
+</article>
+{% endblock %}
